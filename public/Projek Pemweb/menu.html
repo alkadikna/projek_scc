@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Samping</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div id="menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <div class="menu-content">
+            <h2>Akun Saya</h2>
+            <p>Nama Pengguna: John Doe</p>
+            <p>Email: john.doe@example.com</p> <br><br>
+
+            <h3>Search by Categories</h3>
+            <ul style="list-style-type: none;">
+                <li><a href="#">Casing</a></li>
+                <li><a href="#">Motherboard</a></li>
+                <li><a href="#">Processor</a></li>
+                <li><a href="#">RAM</a></li>
+                <li><a href="#">Storage</a></li>
+                <li><a href="#">VGA / Graphics Card</a></li>
+                <li><a href="#">Monitor</a></li>
+                <li><a href="#">Keyboard</a></li>
+                <li><a href="#">Mouse</a></li>
+            </ul>
+
+            <h3>Filter by Price</h3>
+            <div class="price-filter">
+                <div class="slider-container">
+                    <input type="range" id="min-price" min="0" max="100000000" value="0" oninput="updatePriceRange()">
+                    <input type="range" id="max-price" min="0" max="100000000" value="100000000" oninput="updatePriceRange()">
+                    <div class="slider-track"></div>
+                </div>
+                <div class="price-display">
+                    <span id="min-price-display">0</span> - <span id="max-price-display">100000000</span>
+                </div>
+                <button type="button" onclick="applyPriceFilter()">Terapkan</button><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <button class="openbtn" onclick="openMenu()">☰ Menu</button>
+    <script src="menu.js"></script>
+</body>
+</html>

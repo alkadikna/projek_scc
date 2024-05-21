@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+header nav ul li a:hover,
+header nav ul li.active a {
+    color: green;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.payment-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.payment-form {
+    background-color: #fff4e6;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 65%;
+}
+
+.payment-form h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment-options div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-icon {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group-inline .form-group {
+    width: 48%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn,
+.confirm-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+.confirm-btn {
+    background-color: green;
+    color: #fff;
+}
+
+.confirm-btn:hover {
+    background-color: #004d00;
+}
+
+.order-summary {
+    background-color: #fff4e6;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.order-summary h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.price-details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.price-details .discount {
+    color: red;
+}
+
+.price-details .coupon a {
+    color: green;
+    text-decoration: none;
+}
+
+.price-details .shipping .free {
+    color: green;
+    font-weight: bold;
+}
+
+.total-amount p {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.savings {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.premium-feature {
+    margin-top: 20px;
+    background-color: #e9f9e9;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.place-order {
+    background-color: #0000ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.place-order:hover {
+    background-color: #0000b3;
+}
+
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 4%;
+    font-size: 18px;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid black;
+}
