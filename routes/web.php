@@ -35,7 +35,7 @@ Route::get('/detail/{id}',[HomeController::class, 'detail'])->name('detail');
 
 Route::post('/addcart/{id}',[HomeController::class, 'addcart']);
 
-Route::get('/category/{name}', [HomeController::class, 'category']);
+Route::get('/category/{category}', [HomeController::class, 'search']);
 
 Route::get('/checkout',[HomeController::class, 'checkout']);
 
@@ -44,6 +44,8 @@ Route::get('/delete/{id}',[HomeController::class, 'deletecart']);
 Route::patch('/update/{id}',[HomeController::class, 'updatecart']);
 
 Route::post('/order',[HomeController::class, 'order']);
+
+Route::get('/category/{category}/search', [HomeController::class, 'search']);
 
 
 require __DIR__.'/auth.php';

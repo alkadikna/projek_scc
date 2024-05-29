@@ -28,30 +28,56 @@ class HomeController extends Controller
         
     }
 
-    public function search(Request $request){
-        $search = $request->search;
-        $data=product::where('title', 'Like','%'.$search.'%')->get();
-        if(auth()->check()){
-            $user = Auth::user();
-            $count = cart::where('email',$user->email)->count();
-            $cart = cart::where('email',$user->email)->get();
-            return view('user.search',compact('data','user','count','cart'));
-        }else{
-            return view('user.search',compact('data'));
-        }
-    }
+    // public function search(Request $request){
+    //     $search = $request->search;
+    //     $data=product::where('title', 'Like','%'.$search.'%')->get();
+    //     if(auth()->check()){
+    //         $user = Auth::user();
+    //         $count = cart::where('email',$user->email)->count();
+    //         $cart = cart::where('email',$user->email)->get();
+    //         return view('user.search',compact('data','user','count','cart'));
+    //     }else{
+    //         return view('user.search',compact('data'));
+    //     }
+    // }
 
-    public function category($category){
-        $data=product::where('category', 'Like',$category)->get();
-        if(auth()->check()){
+    public function search(Request $request, $category = null)
+    {
+        $search = $request->search;
+        $query = Product::query();
+
+        if ($category) {
+            $query->where('category',$category);
+        }
+
+        if ($search) {
+            $query->where('title', 'LIKE', '%' . $search . '%');
+        }
+
+        $data = $query->get();
+
+        if (auth()->check()) {
             $user = Auth::user();
-            $count = cart::where('email',$user->email)->count();
-            $cart = cart::where('email',$user->email)->get();
-            return view('user.search',compact('data','user','count','cart'));
-        }else{
-            return view('user.search',compact('data'));
+            $count = Cart::where('email', $user->email)->count();
+            $cart = Cart::where('email', $user->email)->get();
+            return view('user.search', compact('data', 'user', 'count', 'cart', 'category'));
+        } else {
+            return view('user.search', compact('data'));
         }
     }
+    
+
+    // public function category($category){
+    //     $data=product::where('category', 'Like',$category)->get();
+    //     if(auth()->check()){
+    //         $user = Auth::user();
+    //         $count = cart::where('email',$user->email)->count();
+    //         $cart = cart::where('email',$user->email)->get();
+    //         return view('user.search',compact('data','user','count','cart'));
+    //     }else{
+    //         return view('user.search',compact('data'));
+    //     }
+    // }
 
     public function detail($id){
         $data=product::find($id);
@@ -73,7 +99,7 @@ class HomeController extends Controller
             $cart = cart::where('email', $user->email)->where('product_title', $product->title)->first();
 
             if ($cart) {
-            // Jika produk sudah ada di keranjang, tambahkan kuantitasnya
+            // Jika sudah ada di keranjang, tambahkan kuantitasnya
             $cart->quantity += $request->quantity;
             } else {
             // Jika produk belum ada di keranjang, buat item keranjang baru
