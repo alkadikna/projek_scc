@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\Order;
 
 class HomeController extends Controller
 {
@@ -41,8 +42,7 @@ class HomeController extends Controller
     //     }
     // }
 
-    public function search(Request $request, $category = null)
-    {
+    public function search(Request $request, $category = null){
         $search = $request->search;
         $query = Product::query();
 
@@ -62,7 +62,7 @@ class HomeController extends Controller
             $cart = Cart::where('email', $user->email)->get();
             return view('user.search', compact('data', 'user', 'count', 'cart', 'category'));
         } else {
-            return view('user.search', compact('data'));
+            return view('user.search', compact('data', 'category'));
         }
     }
     
@@ -151,14 +151,43 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Keranjang berhasil diperbarui');
     }
 
-    public function order(){
+    public function order(Request $request){
         $user = Auth::user();
         $email = $user->email;
+        $paymentMethod = $request->input('payment-method');
+
+        $cartItems = DB::table('carts')->where('email', $email)->get();
+
+        $totalPrice = $cartItems->sum('price');
+
+        $items = $cartItems->map(function ($item) {
+            return [
+                'product_title' => $item->product_title,
+                'quantity' => $item->quantity,
+                'price' => $item->price,
+            ];
+        });
+
+        $order = new Order();
+        $order->user_id = $user->id;
+        $order->email = $email;
+        $order->payment_method = $paymentMethod;
+        $order->items = $items->toJson();
+        $order->total_price = $totalPrice;
+        $order->save();
 
         DB::table('carts')->where('email', $email)->delete();
 
         return redirect('home')->with('success', 'Order telah dibuat');
+    }
 
+    public function orderHistory(){
+        $user = Auth::user();
+        $count = cart::where('email',$user->email)->count();
+        $cart = cart::where('email',$user->email)->get();
+        $orders = Order::where('user_id', $user->id)->get();
+
+        return view('user.history', compact('orders'));
     }
 
 

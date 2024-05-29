@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/home',[HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');;
+Route::get('/home',[HomeController::class, 'index'])->name('dashboard');;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/',function(){return redirect('/home');});
 
 Route::get('/search',[HomeController::class, 'search']);
 
@@ -46,6 +46,9 @@ Route::patch('/update/{id}',[HomeController::class, 'updatecart']);
 Route::post('/order',[HomeController::class, 'order']);
 
 Route::get('/category/{category}/search', [HomeController::class, 'search']);
+
+Route::get('/order-history', [HomeController::class, 'orderHistory'])->name('history');
+
 
 
 require __DIR__.'/auth.php';

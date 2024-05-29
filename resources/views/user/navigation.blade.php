@@ -9,16 +9,17 @@
         <ul>
             @isset($user)
             <li><button id="cart-button">Cart[{{$count}}]</button></li>
+            <li><a href="{{ route('history') }}">History</a></li>
             @endisset($user)
-            <li><a href="#">Wishlist</a></li>
-            <li><a href="#">Help/Support</a></li>
-            <li>
+            <!-- <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Help/Support</a></li> -->
+            <!-- <li>
                 <a href="#">Language/Bahasa</a>
                 <ul class="dropdown">
                     <li><a href="#">English</a></li>
                     <li><a href="#">Bahasa</a></li>
                 </ul>
-            </li>
+            </li> -->
             <!-- <li><a href="#">Login|Masuk</a></li> -->
             <li>
                     @if (Route::has('login'))
