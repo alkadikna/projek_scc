@@ -151,35 +151,37 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Keranjang berhasil diperbarui');
     }
 
-    public function order(Request $request){
-        $user = Auth::user();
-        $email = $user->email;
-        $paymentMethod = $request->input('payment-method');
+    public function order(Request $request)
+{
+    $user = Auth::user();
+    $email = $user->email;
+    $paymentMethod = $request->input('payment-method');
 
-        $cartItems = DB::table('carts')->where('email', $email)->get();
+    $cartItems = DB::table('carts')->where('email', $email)->get();
 
-        $totalPrice = $cartItems->sum('price');
+    $totalPrice = $cartItems->sum('price');
 
-        $items = $cartItems->map(function ($item) {
-            return [
-                'product_title' => $item->product_title,
-                'quantity' => $item->quantity,
-                'price' => $item->price,
-            ];
-        });
+    $items = $cartItems->map(function ($item) {
+        return [
+            'product_title' => $item->product_title,
+            'quantity' => $item->quantity,
+            'price' => $item->price,
+        ];
+    })->toArray();
 
-        $order = new Order();
-        $order->user_id = $user->id;
-        $order->email = $email;
-        $order->payment_method = $paymentMethod;
-        $order->items = $items->toJson();
-        $order->total_price = $totalPrice;
-        $order->save();
+    $order = new Order();
+    $order->user_id = $user->id;
+    $order->email = $email;
+    $order->payment_method = $paymentMethod;
+    $order->items = $items; 
+    $order->total_price = $totalPrice;
+    $order->save();
 
-        DB::table('carts')->where('email', $email)->delete();
+    DB::table('carts')->where('email', $email)->delete();
 
-        return redirect('home')->with('success', 'Order telah dibuat');
-    }
+    return redirect('home')->with('success', 'Order telah dibuat');
+}
+
 
     public function orderHistory(){
         $user = Auth::user();
