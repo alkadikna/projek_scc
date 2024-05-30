@@ -145,7 +145,9 @@ class HomeController extends Controller
 
     public function updatecart(Request $request, $id){
         $item = Cart::find($id);
+        $unitPrice = ($item->price)/($item->quantity);
         $item->quantity = $request->quantity;
+        $item->price = number_format(($item->quantity)*$unitPrice, 2, '.', '');
         $item->save();
 
         return redirect()->back()->with('success', 'Keranjang berhasil diperbarui');
