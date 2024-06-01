@@ -29,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0.5%;
-    background-color: #ece75f;
+    background-color: lightblue;
     border-bottom: 1px solid #ddd;
 }
 
@@ -83,6 +83,10 @@ header nav ul li .dropdown li {
     width: 65%;
     margin: 0 auto; 
     height: 30vmax;
+}
+
+.logged-in{
+    margin-top: 10px;
 }
 
 .new-items, .hot-deals {
@@ -143,4 +147,19 @@ header nav ul li .dropdown li {
     height: 150px;
     margin: 10px;
 }
+
+.gambar-cart{
+    width: 3vmax;
+    height: 2vmax;
+}
+
+.icon-history{
+    width: 2vmax;
+    height: 2vmax;
+    transform: translateX(100%);
+}
+
+/* .cart-content{
+    display: flex;
+} */
 

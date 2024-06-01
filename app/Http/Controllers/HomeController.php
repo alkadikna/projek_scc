@@ -194,6 +194,13 @@ class HomeController extends Controller
         return view('user.history', compact('orders'));
     }
 
+    public function detailHistory($id){
+        $user = Auth::user();
+        $count = Cart::where('email', $user->email)->count();
+        $cart = Cart::where('email', $user->email)->get();
+        $orders = Order::where('user_id', $user->id)->find($id);
 
+        return view('user.detailHistory', compact('orders'));
+    }
 
 }

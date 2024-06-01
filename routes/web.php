@@ -49,7 +49,7 @@ Route::get('/category/{category}/search', [HomeController::class, 'search']);
 
 Route::get('/order-history', [HomeController::class, 'orderHistory'])->name('history');
 
-
+Route::get('/detail-history/{id}', [HomeController::class, 'detailHistory'])->name('detailHistory');
 
 require __DIR__.'/auth.php';
 

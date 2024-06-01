@@ -22,7 +22,7 @@
    
     @include('user.banner')
 
-    <h2>Hot deals!</h2>
+    <h2 style="font-size: 2vmax; padding-top: 4vmax">Hot deals!</h2>
     @include('user.product_home')
 
     <script src="{{ asset('Projek Pemweb/cart.js') }}"></script>

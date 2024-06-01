@@ -1,8 +1,16 @@
-<div id="cart-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Cart</h2>
-        <div class="cart">
+
+
+<div class="modal" tabindex="-1" id="cart-modal">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content"style="background-color: #BFEFFF;">
+      <div class="modal-header" style="background-color: #87CEEB;">
+        <h2 class="modal-title">Cart</h2>
+        <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="cart">
             <table id="cart-items">
                 <thead>
                     <tr>
@@ -20,10 +28,14 @@
                     </tr>
                     @endforeach
                 </tbody>
-            </table>
-            <p>Total: $<span id="total-price">{{ $cart->sum('price') }}</span></p>
-            <a href="{{ url('/checkout')}}"><button id="checkout-button">Checkout</button></a>
+            </table> <Br> <br>
+            <p style="display: flex; justify-content: right;">Total: $<span id="total-price">{{ $cart->sum('price') }}</span></p>
             
         </div>
     </div>
+    <div class="modal-footer" style="dispaly: flex; justify-content: center;">
+        <a href="{{ url('/checkout')}}"><button id="checkout-button">Checkout</button></a>
+      </div>
+    </div>
+  </div>
 </div>
