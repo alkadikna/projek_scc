@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('email');
             $table->string('payment_method');
+            $table->string('payment_proof');
             $table->json('items');
             $table->decimal('total_price', 8, 2);
             $table->timestamps();

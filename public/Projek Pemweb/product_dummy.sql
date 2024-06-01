@@ -1,0 +1,38 @@
+INSERT INTO products (title, price, description, quantity, image, category) VALUES
+('Cooler Master Case', '50.00', 'High quality Cooler Master case.', '10', 'parts1.jpg', 'casing'),
+('Asus ROG Strix Motherboard', '100.00', 'High performance Asus ROG Strix motherboard.', '5', 'parts1.jpg', 'motherboard'),
+('Intel Core i7 Processor', '200.00', 'Fast Intel Core i7 processor.', '8', 'parts1.jpg', 'processor'),
+('Corsair Vengeance RAM', '75.00', '8GB DDR4 Corsair Vengeance RAM.', '20', 'parts1.jpg', 'ram'),
+('Samsung EVO SSD', '60.00', '1TB Samsung EVO SSD.', '15', 'parts1.jpg', 'storage'),
+('NVIDIA GTX 1660 VGA', '150.00', '4GB NVIDIA GTX 1660 graphics card.', '12', 'parts1.jpg', 'vga'),
+('Dell UltraSharp Monitor', '120.00', '24 inch Dell UltraSharp LED monitor.', '7', 'parts1.jpg', 'monitor'),
+('Logitech G513 Keyboard', '30.00', 'Mechanical Logitech G513 keyboard.', '25', 'parts1.jpg', 'keyboard'),
+('Logitech MX Master Mouse', '25.00', 'Wireless Logitech MX Master mouse.', '30', 'parts1.jpg', 'mouse'),
+
+('NZXT H510 Case', '55.00', 'High quality NZXT H510 case.', '11', 'parts1.jpg', 'casing'),
+('MSI MPG Z490 Motherboard', '105.00', 'High performance MSI MPG Z490 motherboard.', '6', 'parts1.jpg', 'motherboard'),
+('AMD Ryzen 5 Processor', '210.00', 'Fast AMD Ryzen 5 processor.', '9', 'parts1.jpg', 'processor'),
+('G.Skill Trident Z RAM', '80.00', '8GB DDR4 G.Skill Trident Z RAM.', '21', 'parts1.jpg', 'ram'),
+('WD Blue HDD', '65.00', '1TB WD Blue HDD.', '16', 'parts1.jpg', 'storage'),
+('AMD Radeon RX 570 VGA', '155.00', '4GB AMD Radeon RX 570 graphics card.', '13', 'parts1.jpg', 'vga'),
+('HP 24mh Monitor', '125.00', '24 inch HP 24mh LED monitor.', '8', 'parts1.jpg', 'monitor'),
+('Razer BlackWidow Keyboard', '35.00', 'Mechanical Razer BlackWidow keyboard.', '26', 'parts1.jpg', 'keyboard'),
+('Razer DeathAdder Mouse', '28.00', 'Wireless Razer DeathAdder mouse.', '31', 'parts1.jpg', 'mouse'),
+
+('Thermaltake Versa Case', '60.00', 'High quality Thermaltake Versa case.', '12', 'parts1.jpg', 'casing'),
+('Gigabyte Aorus Master Motherboard', '110.00', 'High performance Gigabyte Aorus Master motherboard.', '7', 'parts1.jpg', 'motherboard'),
+('Intel Core i5 Processor', '220.00', 'Fast Intel Core i5 processor.', '10', 'parts1.jpg', 'processor'),
+('HyperX Fury RAM', '85.00', '8GB DDR4 HyperX Fury RAM.', '22', 'parts1.jpg', 'ram'),
+('Crucial MX500 SSD', '70.00', '1TB Crucial MX500 SSD.', '17', 'parts1.jpg', 'storage'),
+('ASUS TUF Gaming VGA', '160.00', '4GB ASUS TUF Gaming graphics card.', '14', 'parts1.jpg', 'vga'),
+('Acer R240HY Monitor', '130.00', '24 inch Acer R240HY LED monitor.', '9', 'parts1.jpg', 'monitor'),
+('SteelSeries Apex Pro Keyboard', '40.00', 'Mechanical SteelSeries Apex Pro keyboard.', '27', 'parts1.jpg', 'keyboard'),
+('Corsair Dark Core Mouse', '32.00', 'Wireless Corsair Dark Core mouse.', '32', 'parts1.jpg', 'mouse'),
+
+('Phanteks Eclipse Case', '65.00', 'High quality Phanteks Eclipse case.', '13', 'parts1.jpg', 'casing'),
+('ASRock B550 Steel Legend Motherboard', '115.00', 'High performance ASRock B550 Steel Legend motherboard.', '8', 'parts1.jpg', 'motherboard'),
+('AMD Ryzen 7 Processor', '230.00', 'Fast AMD Ryzen 7 processor.', '11', 'parts1.jpg', 'processor'),
+('Patriot Viper Steel RAM', '90.00', '8GB DDR4 Patriot Viper Steel RAM.', '23', 'parts1.jpg', 'ram'),
+('Seagate Barracuda HDD', '75.00', '1TB Seagate Barracuda HDD.', '18', 'parts1.jpg', 'storage'),
+('Zotac Gaming GeForce VGA', '170.00', '4GB Zotac Gaming GeForce graphics card.', '15', 'parts1.jpg', 'vga')
+;
