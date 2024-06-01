@@ -86,6 +86,9 @@
                             <li><span>{{ $item['product_title'] }}</span> - Quantity: {{ $item['quantity'] }} - Price: ${{ $item['price'] }}</li>
                         @endforeach
                     </ul>
+                    <br><h4><strong>Payment Proof:</strong></h4>
+                    <img src="{{ asset('Bukti Pembayaran/' . $orders->payment_proof) }}" style="max-height: 25%; max-width: 25%;">
+
                     <p><strong>Total Price:</strong> ${{ $orders->total_price }}</p>
                 </div>
             </div>

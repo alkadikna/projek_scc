@@ -159,6 +159,10 @@ class HomeController extends Controller
     $email = $user->email;
     $paymentMethod = $request->input('payment-method');
 
+    $paymentProof = $request->file('payment_proof');
+    $imageName = $paymentProof->getClientOriginalName();
+    $paymentProof->move('Bukti Pembayaran', $imageName);
+
     $cartItems = DB::table('carts')->where('email', $email)->get();
 
     $totalPrice = $cartItems->sum('price');
@@ -175,6 +179,7 @@ class HomeController extends Controller
     $order->user_id = $user->id;
     $order->email = $email;
     $order->payment_method = $paymentMethod;
+    $order->payment_proof = $imageName;
     $order->items = $items; 
     $order->total_price = $totalPrice;
     $order->save();

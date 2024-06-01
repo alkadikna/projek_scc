@@ -18,7 +18,7 @@
         <div class="payment-section">
             <div class="payment-form">
                 <h2>Payment</h2>
-                <form id="payment-form" action="{{ url('/order') }}" method="post">
+                <form id="payment-form" action="{{ url('/order') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="payment-method">Select Payment Method:</label>
@@ -40,7 +40,11 @@
                                 <label for="transfer-bank"><img src="{{ asset('Projek Pemweb/transfer-bank.png') }}" alt="Transfer Bank" class="payment-icon"> Transfer Bank</label>
                             </div>
                         </div>
-                    </div>
+                    </div> <br> <br>
+                    <div class="form-group">
+                        <label for="payment-proof">Upload Payment Proof:</label>
+                        <input type="file" id="payment-proof" name="payment_proof" accept="image/*" required>
+                    </div> <br>
                     <div class="form-actions">
                         <a href="{{ route('dashboard') }}" class="back-btn">Back</a>
                         <button type="submit" class="confirm-btn">Confirm and Pay</button>

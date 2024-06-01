@@ -13,9 +13,9 @@
                     <span>[{{$count}}]</span>
                 </button>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('history') }}">
-                    <img src="{{ asset('Projek pemweb/image-removebg-preview (15).png') }}" alt="" class="icon-history">
+            <li class="nav-item" style="transform: translateX(50%);">
+                <a class="nav-link" href="{{ route('history') }}">History
+                    <!-- <img src="{{ asset('Projek pemweb/image-removebg-preview (15).png') }}" alt="" class="icon-history"> -->
                 </a>
             </li>
             @endisset($user)
